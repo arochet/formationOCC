@@ -1,0 +1,7 @@
+{
+  "name": "formationOCC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
