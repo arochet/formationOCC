@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { TacheService } from '../services/taches.service';
 
 @Component({
@@ -12,11 +13,13 @@ export class HomePage {
   valueChampNouvelleTache: string = "";//Valeur entré par l'utilisateur dans l'ion-input
 
   constructor(
-    public tacheService: TacheService
+    public tacheService: TacheService,
+    public router: Router
   ) {
   }
 
   ngOnInit() {
+    this.tacheService.loadListTache();
   }
 
   ajouterTache() {
@@ -31,5 +34,9 @@ export class HomePage {
 
   supprimerTache(i: number) {
     this.tacheService.supprimerTache(i);
+  }
+
+  ouvrirPageParametres() {
+    this.router.navigate(['parametres']);
   }
 }
