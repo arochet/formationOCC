@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TacheService } from '../services/taches.service';
 
 @Component({
   selector: 'app-home',
@@ -8,17 +9,27 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   titre: string = "Formation OCC";
-  listTaches: string[] = ["Ranger ma chambre", "tache 2", "tache 3", "tache 4"];//List de mes taches
+  valueChampNouvelleTache: string = "";//Valeur entré par l'utilisateur dans l'ion-input
 
-
-  constructor() {
+  constructor(
+    public tacheService: TacheService
+  ) {
   }
 
   ngOnInit() {
   }
 
   ajouterTache() {
-    //Ajout d'un nouvelle élément dans le tableau listTaches
-    this.listTaches.push("Nouvelle Tache " + (this.listTaches.length + 1));
+    if (this.valueChampNouvelleTache != "") {
+      //Ajout d'un nouvelle élément dans le tableau listTaches
+      this.tacheService.ajouterTache(this.valueChampNouvelleTache);
+      this.valueChampNouvelleTache = "";
+    } else {
+      console.error("Attention vous ajoutez une tache vide !");
+    }
+  }
+
+  supprimerTache(i: number) {
+    this.tacheService.supprimerTache(i);
   }
 }
