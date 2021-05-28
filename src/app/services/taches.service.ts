@@ -1,7 +1,7 @@
 import { getStorage, setStorage } from "./storage";
 
 export class TacheService {
-    public listTaches: string[] = ["Tache1", "Tache2"];
+    public listTaches: string[] = [];
 
     async loadListTache() {
         const resultListTache = await getStorage("listTache");//On ajoute le mot clé await car getStorage met un peu de temps à s'executer
@@ -12,6 +12,7 @@ export class TacheService {
     ajouterTache(titre: string) {
         console.log("ajouter tache de Tache Service");
         this.listTaches.push(titre);
+        
         setStorage("listTache", this.listTaches);
     }
 
