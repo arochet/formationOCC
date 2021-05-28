@@ -12,7 +12,7 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-item *ngFor="let tache of tacheService.listTaches; let i = index">
-      <ion-label>{{i}} - {{tache}}</ion-label>
+      <ion-label>{{i}} - {{tache.titre}}</ion-label>
       <ion-button color="danger" (click)="supprimerTache(i)">Supprimer</ion-button>
     </ion-item>
   </ion-list>

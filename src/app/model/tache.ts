@@ -1,4 +1,4 @@
-class Tache {
+export class Tache {
     titre: string = "";
     important: boolean = false;
 
