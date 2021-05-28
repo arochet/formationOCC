@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'parametres',
     loadChildren: () => import('./parametres/parametres.module').then( m => m.ParametresPageModule)
   },
+  {
+    path: 'tache-view/:id',
+    loadChildren: () => import('./tache-view/tache-view.module').then( m => m.TacheViewPageModule)
+  },
 ];
 
 @NgModule({

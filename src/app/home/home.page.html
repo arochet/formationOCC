@@ -19,6 +19,7 @@
   
       <ion-item>
         <ion-label><span *ngIf="tache.important">[Important]</span> {{i}} - {{tache.titre}}</ion-label>
+        <ion-button slot="end" (click)="ouvrirTache(i)">Ouvrir</ion-button>
       </ion-item>
   
       <ion-item-options side="end">

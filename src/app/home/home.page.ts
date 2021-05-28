@@ -46,4 +46,7 @@ export class HomePage {
     this.tacheService.setTacheImportant(index);
   }
 
+  ouvrirTache(i: number) {
+    this.router.navigate(['tache-view', i]);
+  }
 }
