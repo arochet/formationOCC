@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Tache } from '../model/tache';
 import { TacheService } from '../services/taches.service';
 
 @Component({
@@ -37,13 +38,12 @@ export class HomePage {
   }
 
   ouvrirPageParametres() {
-    this.router.navigate(['parametres']);
+    this.router.navigate(['parametres']);//On modifie l'url -> localhost:8100/parametres
   }
 
+  //Cette fonction est appelé pour modifier l'état d'un tache. Important ou Non.
   setImportant(index: number) {
-    console.log("Afficher la tache " + this.tacheService.getTache(index).titre);
-    var estImportant = this.tacheService.getTache(index).important;
-    this.tacheService.getTache(index).important = !estImportant;
+    this.tacheService.setTacheImportant(index);
   }
 
 }
