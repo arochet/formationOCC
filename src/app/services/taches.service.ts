@@ -37,4 +37,8 @@ export class TacheService {
         this.listTaches[index].important = !this.listTaches[index].important;
         this.sauvegarde();
     }
+
+    getNombreDeTaches() {
+        return this.listTaches.length;
+    }
 }
