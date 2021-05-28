@@ -18,7 +18,15 @@ export class TacheService {
     }
 
     supprimerTache(index: number) {
-        this.listTaches.splice(index, 1);
+        this.listTaches.splice(index, 1);//On supprime la tache
         setStorage("listTache", this.listTaches);
+    }
+
+    getTache(index: number) {
+        if(this.listTaches[index] != null){
+            return this.listTaches[index];
+        } else {
+            return null;
+        }
     }
 }

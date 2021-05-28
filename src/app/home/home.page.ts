@@ -40,4 +40,10 @@ export class HomePage {
     this.router.navigate(['parametres']);
   }
 
+  setImportant(index: number) {
+    console.log("Afficher la tache " + this.tacheService.getTache(index).titre);
+    var estImportant = this.tacheService.getTache(index).important;
+    this.tacheService.getTache(index).important = !estImportant;
+  }
+
 }

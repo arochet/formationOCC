@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
+<ion-toolbar>
+  <ion-title>
       {{titre}}
     </ion-title>
     <ion-button (click)="ouvrirPageParametres()" color="dark" fill="clear" slot="end">
@@ -12,7 +12,9 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-item *ngFor="let tache of tacheService.listTaches; let i = index">
-      <ion-label>{{i}} - {{tache.titre}}</ion-label>
+      <ion-label>{{i}} - {{tache.titre}} - {{tache.important}}</ion-label>
+      
+      <ion-button (click)="setImportant(i)">Important</ion-button>
       <ion-button color="danger" (click)="supprimerTache(i)">Supprimer</ion-button>
     </ion-item>
   </ion-list>
